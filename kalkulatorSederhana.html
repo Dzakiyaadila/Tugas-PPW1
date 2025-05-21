@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+</head>
+<body>
+    <h2>SUPER BASIC CALCULATOR</h2>
+
+    <button onclick="bil1()">Bilangan 1</button>
+    <button onclick="bil2()">Bilangan 2</button>
+    <br>
+    <br>
+    <button onclick="operasi('+')">Penjumlahan</button>
+    <button onclick="operasi('-')">Pengurangan</button>
+    <button onclick="operasi('*')">Perkalian</button>
+    <button onclick="operasi('/')">Pembagian</button>
+
+    <h2 id="hasil">Hasil Operasi: </h2>
+
+    <script>
+        var bilangan1 = null;
+        var bilangan2 = null;
+
+        function bil1(){
+            var input1 = prompt("Masukkan Bilangan 1 : ");
+            if (input1 != null){
+                bilangan1 = parseFloat(input1);
+                alert("Bilangan 1 = " + bilangan1);
+            } else {
+                alert("Input tidak valid");
+            }
+        }
+
+        function bil2(){
+            var input2 = prompt("Masukkan Bilangan 2 : ");
+            if (input2 != null){
+                bilangan2 = parseFloat(input2);
+                alert("Bilangan 2 = " + bilangan2);
+                
+            } else {
+                alert("Input tidak valid");
+            }
+        }
+//parseFloat gunanya untuk mengkonversi string ke float
+
+        function operasi(operasi){
+            var hasil = 0;
+            if (bilangan1 != null && bilangan2 != null){
+                switch (operasi) {
+                    case '+':
+                        hasil = bilangan1 + bilangan2;
+                        break;
+                    case '-':
+                        hasil = bilangan1 - bilangan2;
+                        break;
+                    case '*':
+                        hasil = bilangan1 * bilangan2;
+                        break;
+                    case '/':
+                        if (bilangan2 != 0) {
+                            hasil = bilangan1 / bilangan2;
+                        } else {
+                            alert("Dilarang membagi dengan nol");
+                            return;
+                        }
+                        break;
+                    default:
+                        alert("Operasi tidak valid");
+                        return;
+                }
+                document.getElementById("hasil").innerHTML = "Hasil Operasi = " + hasil;
+            } else {
+                alert("Silakan masukkan kedua bilangan terlebih dahulu");
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

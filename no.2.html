@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="bil1()">Bilangan 1</button>
+    <button onclick="bil2()">Bilangan 2</button>
+    <button onclick="hasil()">Hasil</button>
+
+    <script>
+        var bilangan1 = null;
+        var bilangan2 = null;
+
+        function bil1(){
+            var input1 = prompt("Masukkan Bilangan 1 : ");
+            if (input1 != null){
+                bilangan1 = parseFloat(input1);
+                alert("Bilangan 1 = " + bilangan1);
+            } else {
+                alert("Input tidak valid");
+            }
+        }
+
+        function bil2(){
+            var input2 = prompt("Masukkan Bilangan 2 : ");
+            if (input2 != null){
+                bilangan2 = parseFloat(input2);
+                alert("Bilangan 2 = " + bilangan2);
+            } else {
+                alert("Input tidak valid");
+            }
+        }
+
+        function hasil(){
+            var hasil = null;
+            if (bilangan1 != null && bilangan2!= null){
+                hasil = bilangan1 * bilangan2;
+                alert("Hasil = " + hasil);
+            } else if (bilangan1 != null && bilangan2 == null){
+                alert("Masukkan bilangan 2 terlebih dahulu");
+            } else if (bilangan1 == null && bilangan2 != null){
+                alert("Masukkan bilangan 1 terlebih dahulu");
+            } else {
+                alert("Masukkan bilangan 1 dan 2 terlebih dahulu");
+            }
+        }
+    </script>
+    
+
+</body>
+</html>
